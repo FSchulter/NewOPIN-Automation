@@ -4,8 +4,8 @@ Library    SeleniumLibrary
 
 *** Variables ***
 #TELA PORTAL OPIN
-${URL_RECEPTORA_HDI_SEGUROS_HML}                 https://openinsurance-int.hdi.com.br/data-pull/bem-vindo
-${URL_PRECADASTRO_HDI_SEGUROS_HML}               https://openinsurance-int.hdi.com.br/data-pull/home
+${URL_RECEPTORA_STA_AUTO_HML}                    https://openinsurance-int.santanderauto.com.br/data-pull/bem-vindo
+${URL_PRECADASTRO_STA_AUTO_HML}                  https://openinsurance-int.santanderauto.com.br/data-pull/home
 
 #MENU IDENTIFICACAO DO CLIENTE
 ${RADIO_BUTTON_PESSOA_FISICA}                    (//input[@type='radio'])[1]
@@ -28,10 +28,8 @@ ${CHECKBOX_PRODUTO_HABITACIONAL}                 //input[@id='5']
 #ESCOLHA SUA SEGURADORA
 ${PLACE_HOLDER_DIGITE_INSTITUICAO}               //input[contains(@placeholder,'Digite os dados da instituição')] 
 
-${ESCREVER_HDI_SANTANDER}                        SANTANDER AUTO
-${ESCREVER_HDI_GLOBAL}                           GLOBAL     
-${RADIO_BUTTON_HDI_GLOBAL}                       (//input[contains(@type,'radio')])[3]
-${RADIO_BUTTON_HDI_SANTANDER}                    //input[@name='card-listCompanies']
+${ESCREVER_HDI_SEGUROS}                          HDI SEGUROS     
+${RADIO_BUTTON_HDI_SEGUROS}                      (//input[contains(@type,'radio')])[3]
 
 #MENU PRAZO DE COMPARTILHAMENTO
 ${CAIXA_SELECAO_PRAZO}                           //span[contains(.,'Selecione o prazo')]
@@ -48,7 +46,7 @@ ${PAGINA_REDIRECIONAMENTO_TRANSMISSORA}          //*[@class="title"]
 
 *** Keywords ***
 Acesso o Portal OPIN em HML da receptora ${receptora}    
-    Open Browser                              ${receptora}        browser=chrome
+    Open Browser                              ${receptora}    browser=chrome
     Capture Page Screenshot                           
 
 clico em comecar
